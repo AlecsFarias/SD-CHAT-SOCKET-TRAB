@@ -1,0 +1,13 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  border-bottom: 5px solid #0091ff;
+}
+
+.headerContainer h1 {
+  color: #fff;
+}

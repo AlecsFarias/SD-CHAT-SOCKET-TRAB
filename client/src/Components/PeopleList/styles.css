@@ -1,0 +1,54 @@
+.peopleContainer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  border-left: 5px solid #0091ff;
+}
+
+.peopleContainer h1 {
+  color: #fff;
+}
+
+table.paleBlueRows {
+  font-family: "Times New Roman", Times, serif;
+  border: 1px solid #ffffff;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.paleBlueRows td,
+table.paleBlueRows th {
+  border: 1px solid #ffffff;
+  padding: 10px 15px;
+
+  color: #fff;
+}
+
+table.paleBlueRows tbody td {
+  font-size: 16px;
+}
+table.paleBlueRows tr:nth-child(even) {
+  background: #0091ff;
+}
+
+table.paleBlueRows thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  border-left: 2px solid #ffffff;
+}
+
+table.paleBlueRows tfoot {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: #d0e4f5;
+  border-top: 3px solid #444444;
+}
+table.paleBlueRows tfoot td {
+  font-size: 14px;
+}
