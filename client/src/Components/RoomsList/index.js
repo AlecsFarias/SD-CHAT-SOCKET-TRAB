@@ -2,7 +2,12 @@ import React, { useState } from "react";
 
 import "./styles.css";
 
-export default function RoomsList({ rooms, addRoom, setSelectedRoom }) {
+export default function RoomsList({
+  rooms,
+  addRoom,
+  setSelectedRoom,
+  selectedRoom,
+}) {
   const [room, setRoom] = useState("");
 
   function submit() {
@@ -21,11 +26,30 @@ export default function RoomsList({ rooms, addRoom, setSelectedRoom }) {
       <div className="rooms">
         {rooms
           .filter((room) => room)
-          .map((room) => (
-            <button className="room" onClick={() => setSelectedRoom(room.id)}>
-              Sala: {room?.id}
-            </button>
-          ))}
+          .map((room) => {
+            const lastMessage = room.messages?.[room.messages?.length - 1];
+
+            return (
+              <button
+                className={`room ${selectedRoom === room.id && "selected"}`}
+                onClick={() => setSelectedRoom(room.id)}
+              >
+                <strong style={{ fontSize: 22 }}>Sala: {room?.id}</strong>
+
+                {room.messages?.length > 0 && (
+                  <p>
+                    <strong style={{ marginLeft: 5 }}>
+                      {lastMessage?.user?.name}:
+                    </strong>
+
+                    {lastMessage.message.type === "text"
+                      ? lastMessage.message.value
+                      : "Arquivo"}
+                  </p>
+                )}
+              </button>
+            );
+          })}
       </div>
 
       <div className="bottomContainer">

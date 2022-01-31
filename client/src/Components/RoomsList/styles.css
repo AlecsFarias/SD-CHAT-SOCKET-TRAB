@@ -42,3 +42,8 @@
   color: #fff;
   border-radius: 0px 0px 0px 5px;
 }
+
+.selected {
+  background-color: #0091ff;
+  color: #fff;
+}
